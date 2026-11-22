@@ -36,7 +36,7 @@ button{font:inherit;font-size:14px;font-weight:600;height:46px;padding:0 22px;bo
 .bt2{border:1px solid var(--navy);background:#fff;color:var(--navy)}.bt2:hover{background:var(--navy);color:#fff}.w{width:100%}
 .btsm{height:36px;padding:0 12px;font-size:12px;border-radius:6px}
 .chip{display:inline-block;padding:8px 14px;border-radius:20px;border:1px solid #cbd5e1;background:#fff;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;height:auto;margin:0 6px 8px 0}.chip.on,.chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-.tag{display:inline-block;padding:4px 10px;border-radius:12px;background:#E0F2FE;color:#075985;font-size:12px;margin:0 6px 6px 0}.tag.o{background:#FFEDD5;color:#9A3412}.tag.warn{background:#FEE2E2;color:#991B1B}
+.tag{display:inline-block;padding:4px 10px;border-radius:12px;background:#E0F2FE;color:#075985;font-size:12px;margin:0 6px 6px 0}.tag.o{background:#FFEDD5;color:#9A3412}.tag.warn{background:#FEE2E2;color:#991B1B}.tag.ok{background:#DCFCE7;color:#166534}
 .pl{display:inline-block;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:600;white-space:nowrap}.pl.a{background:#FFEDD5;color:#9A3412}.pl.b{background:#E0F2FE;color:#075985}.pl.c{background:#DCFCE7;color:#166534}
 
 .stp{display:flex;gap:8px;align-items:center;font-size:13px;margin-bottom:18px;color:#64748b;flex-wrap:wrap}.stp b{width:26px;height:26px;border-radius:50%;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-right:6px}.stp .d{color:var(--navy);font-weight:700}.stp .d b{background:var(--or);color:#fff}.stp s{width:28px;height:2px;background:#cbd5e1}
@@ -46,7 +46,9 @@ button{font:inherit;font-size:14px;font-weight:600;height:46px;padding:0 22px;bo
 
 .op{display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap}.op svg{flex:none;border-radius:6px;background:#E5E7EB}.op .i{flex:1;min-width:200px}.op .pr{text-align:right}
 .op-btns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.tot{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;gap:12px}.tot.f{border-top:1px solid #d1d5db;margin-top:8px;padding-top:12px;font-size:18px;font-weight:700;color:var(--navy)}
+.tot{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;gap:12px}.tot.f{border-top:1px solid #d1d5db;margin-top:8px;padding-top:12px;font-size:17px;font-weight:700;color:var(--navy)}
+.box-sep{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:12px;margin-bottom:12px}
+.box-sep h4{margin:0 0 6px;font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:.3px}
 .tbl-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}th{text-align:left;color:var(--navy);padding:8px 6px;border-bottom:1px solid #d1d5db}td{padding:10px 6px;border-bottom:1px solid #eef0f3;vertical-align:middle}
 .bars{display:flex;gap:12px;height:200px;align-items:flex-end}.bars div{flex:1;background:var(--sky);border-radius:4px 4px 0 0;position:relative;transition:height .4s}.bars div.h{background:var(--or)}.bars span{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:12px;color:var(--tx)}
@@ -106,27 +108,31 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
     <button class="bt2 btsm" id="open-login">Entrar / Login</button>
   </div>
 </header>
-<div class="demo">Protótipo navegável com dados fictícios e valores ilustrativos (comissão hipotética de 8%).</div>
+<div class="demo">MVP navegável · Modelo B2B asset-light · Comissão de 10% cobrada separadamente (Campanha: 50% off na 1ª comissão, teto R$ 120).</div>
 
 <main>
-<!-- BUSCA (já inicia visível com class="view on") -->
+<!-- BUSCA -->
 <section class="view on" id="v-busca">
   <div class="hero">
     <div>
       <h1>Encontre espaços de <span>armazenagem</span> sob demanda</h1>
       <p style="font-size:17px;font-weight:700;color:var(--navy)">Onde a capacidade encontra a oportunidade.</p>
-      <p style="font-size:15px">Contrate armazenagem, preparação de pedidos e distribuição pelo período e volume de que você precisa.</p>
-      <div><span class="bg">✓ Espaços verificados</span><span class="bg">✓ Contratação flexível</span><span class="bg">✓ Operação segura</span></div>
-      <div class="row" style="margin-top:20px"><div class="card"><h3>1. Informe</h3><p>Volume, região e período.</p></div><div class="card"><h3>2. Compare</h3><p>Preço, capacidade e avaliações.</p></div><div class="card"><h3>3. Contrate</h3><p>Proposta, contrato e pagamento.</p></div></div>
+      <p style="font-size:15px">Contrate armazenagem homologada sob demanda e evolua para fulfillment e distribuição conforme a necessidade da sua operação.</p>
+      <div><span class="bg">✓ Homologação presencial</span><span class="bg">✓ Contratação flexível</span><span class="bg">✓ Pagamento direto ao operador</span></div>
+      <div class="row" style="margin-top:20px"><div class="card"><h3>1. Informe</h3><p>Volume, região e período.</p></div><div class="card"><h3>2. Compare</h3><p>Preço, capacidade útil e avaliações.</p></div><div class="card"><h3>3. Contrate</h3><p>Proposta, contrato e acompanhamento.</p></div></div>
     </div>
     <div class="card search-card">
       <h2>Buscar capacidade</h2>
-      <label for="q-serv">Serviço</label><select id="q-serv"><option value="arm">Armazenagem</option><option value="pick">Armazenagem + picking/packing</option><option value="dist">Armazenagem + distribuição</option></select>
-      <label for="q-pal">Quantidade (pallets)</label><input id="q-pal" type="number" min="1" value="30">
+      <label for="q-serv">Modalidade inicial</label><select id="q-serv"><option value="arm">Armazenagem sob demanda (Core)</option><option value="pick">Armazenagem + picking/packing (Roadmap)</option><option value="dist">Armazenagem + distribuição (Roadmap)</option></select>
+      <label for="q-pal">Quantidade (pallets)</label><input id="q-pal" type="number" min="1" value="85">
       <label for="q-reg">Região</label><input id="q-reg" value="Região Metropolitana de Curitiba">
       <div class="row"><div><label for="q-ini">Início</label><input id="q-ini" type="date" value="2026-10-01"></div><div><label for="q-fim">Fim</label><input id="q-fim" type="date" value="2026-12-31"></div></div>
-      <div style="margin-bottom:14px"><button class="chip" data-p="30|2026-10-01|2026-12-31">Black Friday</button><button class="chip" data-p="60|2026-11-01|2027-01-15">Sazonal</button><button class="chip" data-p="10|2026-10-01|2026-11-30">Teste de mercado</button></div>
-      <button class="btn w" id="go-search">Buscar espaços</button>
+      <div style="margin-bottom:14px">
+        <button class="chip" data-p="85|2026-10-01|2026-12-31">Ticket Médio (85p)</button>
+        <button class="chip" data-p="30|2026-10-01|2026-11-30">Black Friday (30p)</button>
+        <button class="chip" data-p="120|2026-11-01|2027-01-15">Sazonal (120p)</button>
+      </div>
+      <button class="btn w" id="go-search">Buscar espaços homologados</button>
     </div>
   </div>
 </section>
@@ -145,20 +151,30 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
   <div class="stp"><span class="d"><b>1</b>Buscar</span><s></s><span class="d"><b>2</b>Comparar</span><s></s><span class="d"><b>3</b>Contratar</span></div>
   <div class="row" style="align-items:flex-start">
     <div style="flex:2">
-      <div class="card" style="margin-bottom:16px"><h2>Resumo do pedido</h2><p id="prop-res"></p></div>
-      <div class="card" style="margin-bottom:16px"><h2>Serviços adicionais</h2>
-        <div class="ck"><input type="checkbox" id="ad-pick"><label for="ad-pick">Picking e packing (R$ 450/mês)</label></div>
-        <div class="ck"><input type="checkbox" id="ad-trans"><label for="ad-trans">Expedição e transporte (R$ 600/mês)</label></div>
-        <div class="ck"><input type="checkbox" id="ad-seg"><label for="ad-seg">Seguro da mercadoria (1,5% do serviço)</label></div></div>
-      <div class="card"><h2>Contrato</h2><div class="ck"><input type="checkbox" id="ad-ct"><label for="ad-ct">Li e aceito o contrato digital e as regras de responsabilidade por perdas e avarias</label></div></div>
+      <div class="card" style="margin-bottom:16px"><h2>Resumo da solicitação</h2><p id="prop-res"></p></div>
+      <div class="card" style="margin-bottom:16px"><h2>Campanha e serviços adicionais</h2>
+        <div class="ck"><input type="checkbox" id="ad-camp" checked><label for="ad-camp"><b>Campanha 1º Contrato (Meses 1–6):</b> 50% de desconto na 1ª comissão (teto de R$ 120,00)</label></div>
+        <div class="ck"><input type="checkbox" id="ad-pick"><label for="ad-pick">Picking e packing – módulo adicional (R$ 450/mês)</label></div>
+        <div class="ck"><input type="checkbox" id="ad-trans"><label for="ad-trans">Expedição e transporte – módulo adicional (R$ 600/mês)</label></div>
+        <div class="ck"><input type="checkbox" id="ad-seg"><label for="ad-seg">Seguro opcional da mercadoria (1,5% do serviço)</label></div></div>
+      <div class="card"><h2>Contrato digital</h2><div class="ck"><input type="checkbox" id="ad-ct"><label for="ad-ct">Li e aceito o contrato digital B2B, o termo de cobrança separada e as regras de responsabilidade por perdas e avarias</label></div></div>
     </div>
-    <div class="card" style="flex:1"><h2>Valores</h2>
-      <div class="tot"><span>Serviço do operador</span><span id="t-srv"></span></div>
-      <div class="tot"><span>Adicionais</span><span id="t-add"></span></div>
-      <div class="tot"><span>Taxa da plataforma (8%)</span><span id="t-fee"></span></div>
-      <div class="tot f"><span>Total</span><span id="t-tot"></span></div>
-      <button class="btn w" id="pay" style="margin-top:18px">Contratar e pagar</button>
-      <p style="font-size:12px;text-align:center;margin:12px 0 0">Pagamento protegido · Contrato digital · Seguro opcional</p>
+    <div class="card" style="flex:1"><h2>Composição financeira</h2>
+      <div class="box-sep">
+        <h4>1. Pago diretamente ao operador</h4>
+        <div class="tot"><span>Armazenagem (<span id="lbl-pal">85</span>p × <span id="lbl-mes">3</span>m)</span><span id="t-srv"></span></div>
+        <div class="tot"><span>Adicionais operacionais</span><span id="t-add"></span></div>
+        <div class="tot" style="font-weight:700;color:var(--navy);border-top:1px dashed #cbd5e1;padding-top:8px"><span>Subtotal operador</span><span id="t-op-tot"></span></div>
+      </div>
+      <div class="box-sep" style="background:#FFF7ED;border-color:#FED7AA">
+        <h4 style="color:#9A3412">2. Cobrança separada FlexLog</h4>
+        <div class="tot"><span>Comissão plataforma (10%)</span><span id="t-fee-bruto"></span></div>
+        <div class="tot" style="color:#166534"><span>Desconto 1º contrato (teto R$ 120)</span><span id="t-desc"></span></div>
+        <div class="tot" style="font-weight:700;color:#9A3412;border-top:1px dashed #FDBA74;padding-top:8px"><span>Total FlexLog (1º ciclo)</span><span id="t-fee"></span></div>
+      </div>
+      <div class="tot f"><span>Investimento total estimado</span><span id="t-tot"></span></div>
+      <button class="btn w" id="pay" style="margin-top:14px">Gerar proposta e contrato</button>
+      <p style="font-size:12px;text-align:center;margin:12px 0 0">Cobrança separada (sem split) · Acompanhamento assistido</p>
     </div>
   </div>
 </section>
@@ -167,28 +183,28 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
 <section class="view" id="v-painel">
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px">
     <h1 style="margin:0">Meus pedidos</h1>
-    <button class="btn btsm" data-go="busca">+ Nova contratação</button>
+    <button class="btn btsm" data-go="busca">+ Nova solicitação</button>
   </div>
   <div class="g k4" style="margin-bottom:16px">
-    <div class="card"><p>Pallets armazenados</p><p class="big" id="k-pal">90</p></div>
-    <div class="card"><p>Pedidos ativos</p><p class="big" id="k-ped">2</p></div>
-    <div class="card"><p>Entregas no prazo</p><p class="big">96%</p></div>
+    <div class="card"><p>Pallets contratados</p><p class="big" id="k-pal">135</p></div>
+    <div class="card"><p>Contratos ativos</p><p class="big" id="k-ped">2</p></div>
+    <div class="card"><p>SLA operacional</p><p class="big">96%</p></div>
     <div class="card"><p>Ocorrências abertas</p><p class="big" id="k-oc">1</p></div>
   </div>
   <div class="row" style="align-items:flex-start">
     <div class="card" style="flex:2.2">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
-        <h2 style="margin:0">Pedidos e entregas</h2>
+        <h2 style="margin:0">Contratos e acompanhamento</h2>
         <div id="ped-filters">
           <button class="chip on" data-f="all" style="padding:5px 10px;font-size:12px">Todos</button>
-          <button class="chip" data-f="sep" style="padding:5px 10px;font-size:12px">Em separação</button>
-          <button class="chip" data-f="rota" style="padding:5px 10px;font-size:12px">Em rota</button>
-          <button class="chip" data-f="ent" style="padding:5px 10px;font-size:12px">Entregues</button>
+          <button class="chip" data-f="sep" style="padding:5px 10px;font-size:12px">Em implantação</button>
+          <button class="chip" data-f="rota" style="padding:5px 10px;font-size:12px">Em operação</button>
+          <button class="chip" data-f="ent" style="padding:5px 10px;font-size:12px">Concluídos</button>
         </div>
       </div>
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>Pedido</th><th>Operador / Volume</th><th>Destino</th><th>Status</th><th>Ações</th></tr></thead>
+          <thead><tr><th>Contrato</th><th>Operador / Volume</th><th>Unidade</th><th>Status</th><th>Ações</th></tr></thead>
           <tbody id="tbl-ped"></tbody>
         </table>
       </div>
@@ -199,10 +215,10 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
       <button class="bt2 w" data-go="servicos" style="margin-bottom:10px">Agendar expedição / rota</button>
       <hr style="border:0;border-top:1px solid #e5e7eb;margin:14px 0">
       <h3>Registrar ocorrência</h3>
-      <label for="oc-ped">Pedido relacionado</label>
+      <label for="oc-ped">Contrato relacionado</label>
       <select id="oc-ped"></select>
       <label for="oc-desc">Motivo</label>
-      <input id="oc-desc" placeholder="Ex.: Atraso na coleta">
+      <input id="oc-desc" placeholder="Ex.: Divergência de inventário">
       <button class="btn w" id="oc">Abrir ocorrência</button>
     </div>
   </div>
@@ -210,11 +226,11 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
 
 <!-- SERVIÇOS -->
 <section class="view" id="v-servicos">
-  <h1>Serviços adicionais e rota compartilhada</h1>
+  <h1>Módulos de expansão e rota compartilhada (Roadmap)</h1>
   <div class="row" style="align-items:flex-start">
     <div style="flex:2">
-      <div class="card" style="margin-bottom:16px"><h2>Picking e packing</h2><div class="row"><div><label for="s1">Pedidos por mês</label><input id="s1" type="number" placeholder="Ex.: 800"></div><div><label for="s2">Itens (SKUs)</label><input id="s2" type="number" placeholder="Ex.: 45"></div><div><label for="s3">Embalagem</label><select id="s3"><option>Caixa padrão</option><option>Personalizada</option></select></div></div></div>
-      <div class="card"><h2>Expedição e transporte</h2><div class="row"><div><label for="e1">Origem</label><input id="e1" value="Operador A (CIC)"></div><div><label for="e2">Destino / região</label><input id="e2" placeholder="Ex.: Curitiba – Zona Sul"></div><div><label for="e3">Janela de entrega</label><input id="e3" placeholder="Ex.: 8h às 12h"></div></div><button class="btn w" id="cot">Solicitar cotação</button></div>
+      <div class="card" style="margin-bottom:16px"><h2>Picking e packing (Fulfillment)</h2><div class="row"><div><label for="s1">Pedidos por mês</label><input id="s1" type="number" placeholder="Ex.: 800"></div><div><label for="s2">Itens (SKUs)</label><input id="s2" type="number" placeholder="Ex.: 45"></div><div><label for="s3">Embalagem</label><select id="s3"><option>Caixa padrão</option><option>Personalizada</option></select></div></div></div>
+      <div class="card"><h2>Expedição e transporte</h2><div class="row"><div><label for="e1">Origem</label><input id="e1" value="Operador A (CIC)"></div><div><label for="e2">Destino / região</label><input id="e2" placeholder="Ex.: Curitiba – Zona Sul"></div><div><label for="e3">Janela de entrega</label><input id="e3" placeholder="Ex.: 8h às 12h"></div></div><button class="btn w" id="cot">Solicitar cotação assistida</button></div>
     </div>
     <div class="card" style="flex:1"><h2>Rota compartilhada (Curitiba)</h2><p>3 pedidos de clientes diferentes têm destinos compatíveis nesta janela.</p>
       <div id="map"></div>
@@ -226,33 +242,33 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
 
 <!-- CADASTRO OPERADOR -->
 <section class="view" id="v-cadastro">
-  <h1>Cadastrar capacidade disponível</h1><p>Em poucos minutos seu espaço ocioso vira receita. <a href="#operador" style="color:var(--sky);font-weight:600">Ver painel do operador →</a></p>
+  <h1>Cadastrar capacidade disponível</h1><p>Monetize até 75% da sua capacidade ociosa após homologação presencial. <a href="#operador" style="color:var(--sky);font-weight:600">Ver painel do operador →</a></p>
   <div class="row" style="align-items:flex-start">
-    <div class="card" style="flex:2"><div class="row"><div><label for="c-nome">Nome da empresa</label><input id="c-nome" placeholder="Nome do operador"><label for="c-loc">Localização</label><input id="c-loc" placeholder="Endereço do galpão"><label for="c-pal">Posições-pallet</label><input id="c-pal" type="number" placeholder="Ex.: 120"></div>
-      <div><label for="c-d1">Disponível de</label><input id="c-d1" type="date"><label for="c-d2">Disponível até</label><input id="c-d2" type="date"><label for="c-pr">Preço mínimo (R$/pallet/mês)</label><input id="c-pr" type="number" placeholder="Ex.: 60"></div></div>
+    <div class="card" style="flex:2"><div class="row"><div><label for="c-nome">Nome da empresa</label><input id="c-nome" placeholder="Nome do operador"><label for="c-loc">Localização</label><input id="c-loc" placeholder="Endereço do galpão"><label for="c-pal">Capacidade total (pallets)</label><input id="c-pal" type="number" placeholder="Ex.: 200"></div>
+      <div><label for="c-d1">Disponível de</label><input id="c-d1" type="date"><label for="c-d2">Disponível até</label><input id="c-d2" type="date"><label for="c-pr">Tarifa (R$/pallet/mês)</label><input id="c-pr" type="number" placeholder="Ex.: 55"></div></div>
       <label>Serviços oferecidos</label><div class="row"><div class="ck"><input type="checkbox" id="x1" checked><label for="x1">Armazenagem</label></div><div class="ck"><input type="checkbox" id="x2"><label for="x2">Picking e packing</label></div><div class="ck"><input type="checkbox" id="x3"><label for="x3">Expedição</label></div><div class="ck"><input type="checkbox" id="x4"><label for="x4">Transporte</label></div></div>
-      <button class="btn w" id="pub">Publicar capacidade</button></div>
-    <div class="card" style="flex:1"><h2>Prévia do anúncio</h2><svg viewBox="0 0 120 70" width="100%" height="130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="background:#E5E7EB;border-radius:6px;margin-bottom:12px"><use href="#wh"/></svg><h3 id="pv-n">Seu nome</h3><span class="tag" id="pv-p">0 pallets</span><span class="tag" id="pv-pr">R$ 0</span><p>Será exibido a contratantes compatíveis, com selo de homologação e avaliações.</p></div>
+      <button class="btn w" id="pub">Solicitar homologação e publicar</button></div>
+    <div class="card" style="flex:1"><h2>Prévia do anúncio</h2><svg viewBox="0 0 120 70" width="100%" height="130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="background:#E5E7EB;border-radius:6px;margin-bottom:12px"><use href="#wh"/></svg><h3 id="pv-n">Seu nome</h3><span class="tag" id="pv-p">0 pallets (75% útil)</span><span class="tag" id="pv-pr">R$ 0</span><p>Sujeito à visita de homologação presencial (taxa de adesão R$ 450) e validação documental.</p></div>
   </div>
 </section>
 
 <!-- OPERADOR -->
 <section class="view" id="v-operador">
   <h1>Painel do operador</h1>
-  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Ocupação atual</p><p class="big">72%</p></div><div class="card"><p>Pallets livres</p><p class="big">34</p></div><div class="card"><p>Receita no mês</p><p class="big">R$ 8,4 mil</p></div><div class="card"><p>Avaliação</p><p class="big">4,8</p></div></div>
+  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Ocupação útil</p><p class="big">75%</p></div><div class="card"><p>Pallets disponíveis</p><p class="big">150 / 200</p></div><div class="card"><p>Faturamento direto</p><p class="big">R$ 8,25 mil</p></div><div class="card"><p>Avaliação</p><p class="big">4,8</p></div></div>
   <div class="row" style="align-items:flex-start"><div class="card" style="flex:2"><h2>Ocupação por mês (ilustrativo)</h2><div class="bars" style="margin-bottom:28px"><div style="height:90px"><span>Jul</span></div><div style="height:110px"><span>Ago</span></div><div style="height:70px"><span>Set</span></div><div style="height:130px" class="h"><span>Out</span></div><div style="height:150px" class="h"><span>Nov</span></div><div style="height:120px"><span>Dez</span></div></div></div>
-    <div class="card" style="flex:1"><h2>Pedidos recebidos</h2><div id="reqs"></div><h3 style="margin-top:16px">Próximo repasse</h3><p>R$ 3.120 em 05/12</p></div></div>
+    <div class="card" style="flex:1"><h2>Propostas recebidas</h2><div id="reqs"></div><h3 style="margin-top:16px">Recebimento</h3><p>Cobrança direta junto ao contratante (sem retenção de GMV)</p></div></div>
 </section>
 
 <!-- ADMIN -->
 <section class="view" id="v-admin">
-  <h1>Gestão interna (Admin)</h1>
-  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Volume transacionado</p><p class="big">R$ 84 mil</p></div><div class="card"><p>Comissão (8%)</p><p class="big">R$ 6,72 mil</p></div><div class="card"><p>Operadores ativos</p><p class="big" id="k-ops">12</p></div><div class="card"><p>SLA médio</p><p class="big">94%</p></div></div>
-  <div class="row" style="align-items:flex-start"><div class="card"><h2>Aguardando homologação</h2><div id="hom"></div></div>
-    <div class="card"><h2>Ocorrências abertas</h2><div class="tbl-wrap"><table id="tbl-admin-oc"><thead><tr><th>Pedido</th><th>Tipo</th><th>Status</th></tr></thead><tbody><tr><td>#1033</td><td>Avaria</td><td><span class="pl a">Em análise</span></td></tr><tr><td>#1036</td><td>Atraso</td><td><span class="pl b">Aberta</span></td></tr></tbody></table></div></div></div>
+  <h1>Gestão interna (Admin · Cenário-Base)</h1>
+  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Receita comissões (Ano 1)</p><p class="big">R$ 139,9 mil</p></div><div class="card"><p>Comissão padrão</p><p class="big">10%</p></div><div class="card"><p>Operadores ativos</p><p class="big" id="k-ops">12</p></div><div class="card"><p>Ticket médio</p><p class="big">85 pallets</p></div></div>
+  <div class="row" style="align-items:flex-start"><div class="card"><h2>Aguardando homologação presencial</h2><div id="hom"></div></div>
+    <div class="card"><h2>Ocorrências abertas</h2><div class="tbl-wrap"><table id="tbl-admin-oc"><thead><tr><th>Contrato</th><th>Tipo</th><th>Status</th></tr></thead><tbody><tr><td>#1033</td><td>Avaria</td><td><span class="pl a">Em análise</span></td></tr><tr><td>#1036</td><td>Atraso</td><td><span class="pl b">Aberta</span></td></tr></tbody></table></div></div></div>
 </section>
 </main>
-<footer>FlexLog · protótipo acadêmico · Onde a capacidade encontra a oportunidade.</footer>
+<footer>FlexLog · MVP de planejamento · Marketplace B2B asset-light · Onde a capacidade encontra a oportunidade.</footer>
 <div id="toast" role="status"></div>
 
 <!-- MODAL LOGIN -->
@@ -278,11 +294,11 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
 <div class="modal-bg" id="modal-ped">
   <div class="modal">
     <button class="modal-close" id="close-ped" aria-label="Fechar">✕</button>
-    <h2 id="mp-title">Pedido #1042</h2>
+    <h2 id="mp-title">Contrato #1042</h2>
     <p id="mp-sub" style="font-size:13px"></p>
     <div class="tl" id="mp-tl"></div>
     <div style="display:flex;gap:8px;margin-top:16px">
-      <button class="btn w" id="mp-advance">Avançar etapa de entrega</button>
+      <button class="btn w" id="mp-advance">Avançar etapa operacional</button>
     </div>
   </div>
 </div>
@@ -293,18 +309,19 @@ footer{text-align:center;font-size:12px;padding:24px 16px;color:#64748b}
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const brl=n=>"R$ "+n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
-const S={pal:30,meses:3,op:null,sort:"score",user:null,pedFilter:"all",activePed:null};
+const S={pal:85,meses:3,op:null,sort:"score",user:null,pedFilter:"all",activePed:null};
 
+/* Operadores baseados nas premissas: 200 pallets totais, 75% utilizável (150 pallets), referência R$ 55/pallet/mês */
 const OPS=[
- {n:"Operador A (CIC)",km:8,rate:4.8,price:62,free:120,score:95,tags:["Picking/packing","Docas"],best:1,lat:-25.4950,lng:-49.3250},
- {n:"Operador B (São José dos Pinhais)",km:14,rate:4.6,price:55,free:80,score:88,tags:["Transporte","Seguro"],lat:-25.5347,lng:-49.2064},
- {n:"Operador C (Pinhais)",km:5,rate:4.3,price:70,free:200,score:82,tags:["Armazenagem"],lat:-25.4429,lng:-49.1927}
+ {n:"Operador A (CIC)",km:8,rate:4.8,price:55,totalCap:200,free:150,score:96,tags:["Armazenagem","Docas"],best:1,lat:-25.4950,lng:-49.3250},
+ {n:"Operador B (São José dos Pinhais)",km:14,rate:4.6,price:52,totalCap:200,free:150,score:89,tags:["Armazenagem","Seguro"],lat:-25.5347,lng:-49.2064},
+ {n:"Operador C (Pinhais)",km:5,rate:4.4,price:58,totalCap:200,free:150,score:84,tags:["Armazenagem","Picking"],lat:-25.4429,lng:-49.1927}
 ];
 
 const PEDIDOS=[
- {id:"#1042",op:"Operador A (CIC)",pal:40,dest:"Batel, Curitiba",st:"sep",prazo:"Amanhã, 14h",steps:["Contrato assinado e pallets recepcionados","Em separação (picking) no galpão CIC"]},
- {id:"#1041",op:"Operador B (SJP)",pal:30,dest:"Portão, Curitiba",st:"rota",prazo:"Hoje, 17h",steps:["Contrato assinado","Separação concluída","Em rota compartilhada (Veículo placa ABC-1D23)"]},
- {id:"#1039",op:"Operador C (Pinhais)",pal:20,dest:"Água Verde, Curitiba",st:"ent",prazo:"Entregue ontem",steps:["Contrato assinado","Separação concluída","Saiu para entrega","Entregue e comprovante assinado"]}
+ {id:"#1042",op:"Operador A (CIC)",pal:85,dest:"CIC, Curitiba",st:"sep",prazo:"Início amanhã",steps:["Contrato B2B assinado (comissão 10% com desconto 1º contrato)","Agendamento de doca para entrada de 85 pallets"]},
+ {id:"#1041",op:"Operador B (SJP)",pal:50,dest:"São José dos Pinhais",st:"rota",prazo:"Ativo · Mês 2/3",steps:["Contrato assinado","50 pallets armazenados e inventariados","Operação regular em andamento"]},
+ {id:"#1039",op:"Operador C (Pinhais)",pal:40,dest:"Pinhais",st:"ent",prazo:"Encerrado",steps:["Contrato assinado","Armazenagem concluída","Retirada final realizada sem avarias"]}
 ];
 
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2800)}
@@ -317,7 +334,7 @@ function initMapRes(){
       mapRes=L.map("map-res").setView([-25.475,-49.255],11);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap"}).addTo(mapRes);
       OPS.forEach(o=>{
-        L.marker([o.lat,o.lng]).addTo(mapRes).bindPopup(`<b>${o.n}</b><br>${o.free} pallets livres · ${brl(o.price)}/mês`);
+        L.marker([o.lat,o.lng]).addTo(mapRes).bindPopup(`<b>${o.n}</b><br>${o.free} pallets úteis · ${brl(o.price)}/mês`);
       });
     }
     setTimeout(()=>mapRes.invalidateSize(),150);
@@ -406,7 +423,7 @@ function renderOps(){
   $("#ops").innerHTML=o.map(p=>{
     const semCap=p.free<S.pal;
     return `<div class="card op" style="${semCap?'opacity:.75':''}"><svg viewBox="0 0 120 70" width="130" height="90" aria-hidden="true"><use href="#wh"/></svg>
-    <div class="i"><h3>${p.n}</h3>${p.best?'<span class="tag o">Melhor combinação</span>':''}${semCap?'<span class="tag warn">Capacidade parcial ('+p.free+' pallets)</span>':''}${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}<span class="tag">✓ Homologado</span><span class="tag">Nota ${p.rate.toString().replace(".",",")}</span><p>${p.km} km · ${p.free} pallets disponíveis</p></div>
+    <div class="i"><h3>${p.n}</h3>${p.best?'<span class="tag o">Melhor combinação</span>':''}${semCap?'<span class="tag warn">Capacidade parcial ('+p.free+'p úteis)</span>':''}${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}<span class="tag ok">✓ Homologado presencialmente</span><span class="tag">Nota ${p.rate.toString().replace(".",",")}</span><p>${p.km} km · ${p.free} pallets úteis (de ${p.totalCap} totais)</p></div>
     <div class="pr"><h3>${brl(p.price)}<small style="font-size:12px"> /pallet/mês</small></h3><div class="op-btns"><button class="bt2 btsm" data-pick="${p.n}">Escolher</button><button class="btn btsm" data-prop="${p.n}">Ver proposta</button></div></div></div>`;
   }).join("");
   $$("[data-prop],[data-pick]").forEach(b=>b.onclick=()=>{
@@ -418,17 +435,33 @@ function renderOps(){
 
 function calc(){
   if(!S.op) S.op=OPS[0];
-  const srv=S.op.price*S.pal*S.meses;
+  const srvMensal=S.op.price*S.pal;
+  const srv=srvMensal*S.meses;
   const add=($("#ad-pick").checked?450*S.meses:0)+($("#ad-trans").checked?600*S.meses:0)+($("#ad-seg").checked?srv*.015:0);
-  const fee=(srv+add)*.08;
+  const opTot=srv+add;
+
+  // Comissão padrão de 10% sobre o serviço + campanha 50% na 1ª comissão (teto R$ 120)
+  const comissao1Mes=srvMensal*.10;
+  const comissaoTotalBruta=opTot*.10;
+  const descontoCamp=$("#ad-camp").checked ? Math.min(120, comissao1Mes*0.50) : 0;
+  const feeLiquida=Math.max(0, comissaoTotalBruta - descontoCamp);
+
+  $("#lbl-pal").textContent=S.pal;
+  $("#lbl-mes").textContent=S.meses;
   $("#prop-res").textContent=`${S.op.n} · ${S.pal} pallets · ${S.meses} ${S.meses>1?"meses":"mês"} · ${$("#q-reg").value}`;
-  $("#t-srv").textContent=brl(srv);$("#t-add").textContent=brl(add);$("#t-fee").textContent=brl(fee);$("#t-tot").textContent=brl(srv+add+fee);
+  $("#t-srv").textContent=brl(srv);
+  $("#t-add").textContent=brl(add);
+  $("#t-op-tot").textContent=brl(opTot);
+  $("#t-fee-bruto").textContent=brl(comissaoTotalBruta);
+  $("#t-desc").textContent="- "+brl(descontoCamp);
+  $("#t-fee").textContent=brl(feeLiquida);
+  $("#t-tot").textContent=brl(opTot+feeLiquida);
 }
 
 const statusMap={
-  sep:{txt:"Em separação",cls:"a",next:"rota",nextStep:"Saiu para entrega em rota compartilhada"},
-  rota:{txt:"Em rota",cls:"b",next:"ent",nextStep:"Entregue no destino e assinado"},
-  ent:{txt:"Entregue",cls:"c",next:null}
+  sep:{txt:"Em implantação",cls:"a",next:"rota",nextStep:"Pallets recepcionados e inventariados no galpão"},
+  rota:{txt:"Em operação",cls:"b",next:"ent",nextStep:"Período contratado encerrado e pallets expedidos"},
+  ent:{txt:"Concluído",cls:"c",next:null}
 };
 
 function renderPedidos(){
@@ -440,12 +473,12 @@ function renderPedidos(){
       <td>${p.op}<br><small>${p.pal} pallets</small></td>
       <td>${p.dest}</td>
       <td><span class="pl ${st.cls}">${st.txt}</span></td>
-      <td><button class="bt2 btsm" data-det="${p.id}">Rastrear</button></td>
+      <td><button class="bt2 btsm" data-det="${p.id}">Acompanhar</button></td>
     </tr>`;
-  }).join("") || `<tr><td colspan="5" style="text-align:center">Nenhum pedido neste filtro.</td></tr>`;
+  }).join("") || `<tr><td colspan="5" style="text-align:center">Nenhum contrato neste filtro.</td></tr>`;
 
   $("#oc-ped").innerHTML=PEDIDOS.map(p=>`<option value="${p.id}">${p.id} · ${p.op}</option>`).join("");
-  $("#k-pal").textContent=PEDIDOS.reduce((acc,p)=>acc+p.pal,0);
+  $("#k-pal").textContent=PEDIDOS.filter(p=>p.st!=="ent").reduce((acc,p)=>acc+p.pal,0);
   $("#k-ped").textContent=PEDIDOS.filter(p=>p.st!=="ent").length;
 
   $$("[data-det]").forEach(b=>b.onclick=()=>{
@@ -456,8 +489,8 @@ function renderPedidos(){
 
 function openPedModal(ped){
   S.activePed=ped;
-  $("#mp-title").textContent=`Pedido ${ped.id} · ${ped.op}`;
-  $("#mp-sub").textContent=`${ped.pal} pallets · Destino: ${ped.dest} · Previsão: ${ped.prazo}`;
+  $("#mp-title").textContent=`Contrato ${ped.id} · ${ped.op}`;
+  $("#mp-sub").textContent=`${ped.pal} pallets · Unidade: ${ped.dest} · Status: ${ped.prazo}`;
   $("#mp-tl").innerHTML=ped.steps.map(s=>`<div>${s}</div>`).join("");
   const st=statusMap[ped.st];
   $("#mp-advance").style.display=st.next?"block":"none";
@@ -472,10 +505,10 @@ $("#mp-advance").onclick=()=>{
   if(st.next){
     ped.st=st.next;
     ped.steps.push(st.nextStep);
-    if(ped.st==="ent") ped.prazo="Entregue agora";
+    if(ped.st==="ent") ped.prazo="Concluído";
     renderPedidos();
     openPedModal(ped);
-    toast(`Status do pedido ${ped.id} atualizado!`);
+    toast(`Status do contrato ${ped.id} atualizado!`);
   }
 };
 
@@ -486,13 +519,13 @@ $$("#ped-filters .chip").forEach(b=>b.onclick=()=>{
   renderPedidos();
 });
 
-const REQS=["Cliente 1 · 30 pallets","Cliente 2 · 12 pallets"],HOM=["Operador D · documentos enviados · seguro ok","Operador E · documentos pendentes"];
+const REQS=["Cliente 1 · 85 pallets (R$ 55/mês)","Cliente 2 · 40 pallets (R$ 55/mês)"],HOM=["Operador D · vistoria presencial agendada (taxa R$ 450 ok)","Operador E · aguardando vistoria técnica"];
 function list(id,arr,ok,no){
   $(id).innerHTML=arr.map((t,i)=>`<div class="op" style="margin-bottom:10px;flex-direction:row"><p class="i" style="margin:0">${t}</p><div style="display:flex;gap:6px"><button class="btn btsm" data-y="${i}">${ok}</button><button class="bt2 btsm" data-n="${i}">${no}</button></div></div>`).join("")||"<p>Nada pendente.</p>";
   $$(id+" button").forEach(b=>b.onclick=()=>{
     arr.splice(+(b.dataset.y??b.dataset.n),1);
     if(b.textContent==="Aprovar") $("#k-ops").textContent=+$("#k-ops").textContent+1;
-    toast({Aceitar:"Pedido aceito",Recusar:"Pedido recusado",Aprovar:"Operador aprovado",Reprovar:"Operador reprovado"}[b.textContent]);
+    toast({Aceitar:"Proposta aceita",Recusar:"Proposta recusada",Aprovar:"Operador homologado",Reprovar:"Operador reprovado"}[b.textContent]);
     list(id,arr,ok,no);
   });
 }
@@ -529,14 +562,14 @@ $("#go-search").onclick=()=>{
   const srv=$("#q-serv").value;
   $("#ad-pick").checked=(srv==="pick");
   $("#ad-trans").checked=(srv==="dist");
-  $("#res-title").textContent=`${OPS.length} operadores compatíveis · ${S.pal} pallets · ${$("#q-ini").value.split("-").reverse().join("/")} a ${$("#q-fim").value.split("-").reverse().join("/")}`;
+  $("#res-title").textContent=`${OPS.length} operadores homologados · ${S.pal} pallets · ${$("#q-ini").value.split("-").reverse().join("/")} a ${$("#q-fim").value.split("-").reverse().join("/")}`;
   renderOps();
   go("resultados");
 };
 
 $$("[data-p]").forEach(b=>b.onclick=()=>{const[p,i,f]=b.dataset.p.split("|");$("#q-pal").value=p;$("#q-ini").value=i;$("#q-fim").value=f;toast("Busca preenchida: "+b.textContent)});
 $$("#sort .chip").forEach(b=>b.onclick=()=>{$$("#sort .chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");S.sort=b.dataset.s;renderOps()});
-["ad-pick","ad-trans","ad-seg"].forEach(i=>$("#"+i).onchange=calc);
+["ad-camp","ad-pick","ad-trans","ad-seg"].forEach(i=>$("#"+i).onchange=calc);
 
 $("#pay").onclick=()=>{
   if(!$("#ad-ct").checked) return toast("Aceite o contrato digital para continuar");
@@ -548,10 +581,10 @@ $("#pay").onclick=()=>{
     dest:$("#q-reg").value,
     st:"sep",
     prazo:"Início em "+$("#q-ini").value.split("-").reverse().join("/"),
-    steps:["Contrato digital assinado e pagamento confirmado","Reserva de "+S.pal+" pallets confirmada com "+S.op.n]
+    steps:["Contrato B2B gerado (cobrança separada: operador + comissão 10% FlexLog)","Reserva de "+S.pal+" pallets confirmada com "+S.op.n]
   });
   renderPedidos();
-  toast(`Pedido ${novoId} contratado com sucesso!`);
+  toast(`Contrato ${novoId} gerado com sucesso!`);
   go("painel");
 };
 
@@ -566,25 +599,26 @@ $("#oc").onclick=()=>{
   $("#oc-desc").value="";
   toast(`Ocorrência registrada para ${pedId}`);
 };
-$("#cot").onclick=()=>toast("Cotação solicitada com sucesso");
+$("#cot").onclick=()=>toast("Cotação assistida solicitada");
 $("#rt-ok").onclick=()=>toast($("#rt").checked?"Consolidação confirmada na rota":"Marque para incluir seu pedido na rota");
 
-[["c-nome","pv-n",v=>v||"Seu nome"],["c-pal","pv-p",v=>(v||0)+" pallets"],["c-pr","pv-pr",v=>brl(+v||0)]].forEach(([a,b,f])=>$("#"+a).oninput=e=>$("#"+b).textContent=f(e.target.value));
+[["c-nome","pv-n",v=>v||"Seu nome"],["c-pal","pv-p",v=>Math.round((+v||0)*0.75)+" pallets úteis (75%)"],["c-pr","pv-pr",v=>brl(+v||0)]].forEach(([a,b,f])=>$("#"+a).oninput=e=>$("#"+b).textContent=f(e.target.value));
 
 $("#pub").onclick=()=>{
   const nome=$("#c-nome").value.trim();
-  const pal=+$("#c-pal").value;
+  const totalCap=+$("#c-pal").value;
   const pr=+$("#c-pr").value;
-  if(!nome || pal<=0 || pr<=0) return toast("Preencha nome, pallets e preço válido");
+  if(!nome || totalCap<=0 || pr<=0) return toast("Preencha nome, capacidade total e tarifa válida");
+  const free=Math.round(totalCap*0.75);
   const tags=[];
   if($("#x1").checked) tags.push("Armazenagem");
   if($("#x2").checked) tags.push("Picking/packing");
   if($("#x4").checked) tags.push("Transporte");
-  OPS.push({n:nome,km:11,rate:5.0,price:pr,free:pal,score:90,tags:tags.length?tags:["Armazenagem"],lat:-25.465,lng:-49.265});
-  HOM.push(`${nome} · ${pal} pallets · aguardando análise`);
+  OPS.push({n:nome,km:11,rate:5.0,price:pr,totalCap,free,score:90,tags:tags.length?tags:["Armazenagem"],lat:-25.465,lng:-49.265});
+  HOM.push(`${nome} · ${totalCap}p totais (${free}p úteis) · vistoria presencial pendente`);
   list("#hom",HOM,"Aprovar","Reprovar");
   renderOps();
-  toast("Capacidade publicada e enviada para homologação!");
+  toast("Solicitação enviada para homologação presencial!");
 };
 
 list("#reqs",REQS,"Aceitar","Recusar");
