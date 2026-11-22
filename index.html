@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexLog – Onde a capacidade encontra a oportunidade</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2D5B;--or:#F97316;--sky:#0EA5E9;--gr:#E5E7EB;--bg:#F4F6FA;--tx:#475569}
+*{box-sizing:border-box}body{margin:0;font-family:Montserrat,Arial,sans-serif;background:var(--bg);color:var(--tx)}
+h1,h2,h3{color:var(--navy);margin:0 0 10px}h1{font-size:34px}h2{font-size:19px}p{line-height:1.5;font-size:14px;margin:0 0 12px}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #d1d5db;display:flex;align-items:center;gap:26px;padding:0 32px;height:66px}
+.logo{display:flex;align-items:center;gap:8px;font-size:24px;font-weight:800;font-style:italic;color:var(--navy);letter-spacing:-1px;margin-right:12px}.logo em{color:var(--or)}
+nav{display:flex;gap:24px;flex:1;flex-wrap:wrap}nav a{font-size:14px;padding:23px 0;border-bottom:3px solid transparent}nav a:hover{color:var(--or)}nav a.on{color:var(--navy);font-weight:700;border-color:var(--or)}
+.demo{background:#FFEDD5;color:#9A3412;text-align:center;font-size:12px;padding:6px}
+main{max-width:1180px;margin:0 auto;padding:28px 24px 60px}.view{display:none}.view.on{display:block;animation:in .3s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.card{background:#fff;border:1px solid #d1d5db;border-radius:10px;padding:20px;transition:box-shadow .2s}.card:hover{box-shadow:0 8px 22px rgba(11,45,91,.12)}
+.row{display:flex;gap:16px;flex-wrap:wrap}.row>*{flex:1;min-width:200px}.g{display:grid;gap:16px}.k4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+input,select{width:100%;height:46px;border:1px solid #9ca3af;border-radius:8px;padding:0 12px;font:inherit;font-size:14px;margin-bottom:14px;background:#fff}
+input:focus,select:focus{outline:2px solid var(--sky);border-color:var(--sky)}input[type=checkbox]{width:18px;height:18px;margin:0;accent-color:var(--or)}
+.ck{display:flex;gap:10px;align-items:center;font-size:14px;margin-bottom:12px}.ck label{margin:0;font-weight:400;color:var(--tx)}
+button{font:inherit;font-size:14px;font-weight:600;height:46px;padding:0 22px;border-radius:8px;cursor:pointer;transition:all .2s}
+.btn{border:0;background:var(--or);color:#fff}.btn:hover{background:#EA580C;transform:translateY(-1px);box-shadow:0 6px 14px rgba(249,115,22,.35)}
+.bt2{border:1px solid var(--navy);background:#fff;color:var(--navy)}.bt2:hover{background:var(--navy);color:#fff}.w{width:100%}
+.chip{display:inline-block;padding:8px 14px;border-radius:20px;border:1px solid #cbd5e1;background:#fff;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;height:auto;margin:0 6px 8px 0}.chip.on,.chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tag{display:inline-block;padding:4px 10px;border-radius:12px;background:#E0F2FE;color:#075985;font-size:12px;margin:0 6px 6px 0}.tag.o{background:#FFEDD5;color:#9A3412}
+.pl{display:inline-block;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:600}.pl.a{background:#FFEDD5;color:#9A3412}.pl.b{background:#E0F2FE;color:#075985}.pl.c{background:#DCFCE7;color:#166534}
+.stp{display:flex;gap:10px;align-items:center;font-size:13px;margin-bottom:18px;color:#64748b}.stp b{width:26px;height:26px;border-radius:50%;background:var(--gr);display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-right:6px}.stp .d{color:var(--navy);font-weight:700}.stp .d b{background:var(--or);color:#fff}.stp s{width:40px;height:2px;background:#cbd5e1}
+.hero{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start}.hero>div:first-child{flex:1;min-width:300px;padding-top:16px}.hero h1{font-size:42px;line-height:1.15}.hero h1 span{color:var(--or)}
+.bg{display:inline-block;padding:7px 12px;border-radius:8px;background:#E0F2FE;color:var(--navy);font-size:12px;font-weight:600;margin:0 8px 8px 0}
+.op{display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap}.op svg{flex:none;border-radius:6px;background:#E5E7EB}.op .i{flex:1;min-width:220px}.op .pr{text-align:right}
+.tot{display:flex;justify-content:space-between;padding:6px 0;font-size:14px}.tot.f{border-top:1px solid #d1d5db;margin-top:8px;padding-top:12px;font-size:18px;font-weight:700;color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--navy);padding:8px 6px;border-bottom:1px solid #d1d5db}td{padding:10px 6px;border-bottom:1px solid #eef0f3}
+.bars{display:flex;gap:12px;height:200px;align-items:flex-end}.bars div{flex:1;background:var(--sky);border-radius:4px 4px 0 0;position:relative;transition:height .4s}.bars div.h{background:var(--or)}.bars span{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:12px;color:var(--tx)}
+.big{font-size:30px;font-weight:800;color:var(--navy);margin:0}#map{height:260px;border-radius:8px;overflow:hidden}#map svg{width:100%;height:100%}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--navy);color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;transition:transform .3s;z-index:9}#toast.on{transform:translate(-50%,0)}
+footer{text-align:center;font-size:12px;padding:24px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#busca"><svg width="34" height="34" viewBox="0 0 40 40" role="img" aria-label="Logo FlexLog"><path d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5Z" fill="#0B2D5B"/><path d="M20 20L35 11.5V28.5L20 37Z" fill="#F97316"/><path d="M11 16L17 19.5V30L11 26.5Z" fill="#fff" opacity=".9"/></svg><span>Flex<em>Log</em></span></a>
+  <nav id="nav">
+    <a href="#busca" data-v="busca,resultados,proposta">Buscar capacidade</a>
+    <a href="#painel" data-v="painel">Meus pedidos</a>
+    <a href="#servicos" data-v="servicos">Serviços e rotas</a>
+    <a href="#cadastro" data-v="cadastro,operador">Sou operador</a>
+    <a href="#admin" data-v="admin">Área interna</a>
+  </nav>
+</header>
+<div class="demo">Protótipo navegável com dados fictícios e valores ilustrativos (comissão hipotética de 10%).</div>
+
+<main>
+<!-- BUSCA -->
+<section class="view" id="v-busca">
+  <div class="hero">
+    <div>
+      <h1>Encontre espaços de <span>armazenagem</span> sob demanda</h1>
+      <p style="font-size:18px;font-weight:700;color:var(--navy)">Onde a capacidade encontra a oportunidade.</p>
+      <p style="font-size:16px">Contrate armazenagem, preparação de pedidos e distribuição pelo período e volume de que você precisa.</p>
+      <div><span class="bg">✓ Espaços verificados</span><span class="bg">✓ Contratação flexível</span><span class="bg">✓ Operação segura</span></div>
+      <div class="row" style="margin-top:20px"><div class="card"><h3>1. Informe</h3><p>Volume, região e período.</p></div><div class="card"><h3>2. Compare</h3><p>Preço, capacidade e avaliações.</p></div><div class="card"><h3>3. Contrate</h3><p>Proposta, contrato e pagamento.</p></div></div>
+    </div>
+    <div class="card" style="width:420px;max-width:100%">
+      <h2>Buscar capacidade</h2>
+      <label for="q-serv">Serviço</label><select id="q-serv"><option>Armazenagem</option><option>Armazenagem + picking/packing</option><option>Armazenagem + distribuição</option></select>
+      <label for="q-pal">Quantidade (pallets)</label><input id="q-pal" type="number" min="1" value="30">
+      <label for="q-reg">Região</label><input id="q-reg" value="Região Metropolitana de Curitiba">
+      <div class="row"><div><label for="q-ini">Início</label><input id="q-ini" type="date" value="2026-10-01"></div><div><label for="q-fim">Fim</label><input id="q-fim" type="date" value="2026-12-31"></div></div>
+      <div style="margin-bottom:14px"><button class="chip" data-p="30|2026-10-01|2026-12-31">Black Friday</button><button class="chip" data-p="60|2026-11-01|2027-01-15">Sazonal</button><button class="chip" data-p="10|2026-10-01|2026-11-30">Teste de mercado</button></div>
+      <button class="btn w" id="go-search">Buscar espaços</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="view" id="v-resultados">
+  <div class="stp"><span class="d"><b>1</b>Buscar</span><s></s><span class="d"><b>2</b>Comparar</span><s></s><span><b>3</b>Contratar</span></div>
+  <h2 id="res-title"></h2>
+  <div class="card" style="padding:0;margin-bottom:14px"><div id="map-res" style="height:120px;overflow:hidden;border-radius:10px"></div></div>
+  <div id="sort"><button class="chip on" data-s="score">Melhor combinação</button><button class="chip" data-s="price">Menor preço</button><button class="chip" data-s="km">Mais próximo</button><button class="chip" data-s="rate">Melhor avaliado</button></div>
+  <div id="ops"></div>
+</section>
+
+<!-- PROPOSTA -->
+<section class="view" id="v-proposta">
+  <div class="stp"><span class="d"><b>1</b>Buscar</span><s></s><span class="d"><b>2</b>Comparar</span><s></s><span class="d"><b>3</b>Contratar</span></div>
+  <div class="row" style="align-items:flex-start">
+    <div style="flex:2;min-width:300px">
+      <div class="card" style="margin-bottom:16px"><h2>Resumo do pedido</h2><p id="prop-res"></p></div>
+      <div class="card" style="margin-bottom:16px"><h2>Serviços adicionais</h2>
+        <div class="ck"><input type="checkbox" id="ad-pick"><label for="ad-pick">Picking e packing (R$ 450/mês)</label></div>
+        <div class="ck"><input type="checkbox" id="ad-trans"><label for="ad-trans">Expedição e transporte (R$ 600/mês)</label></div>
+        <div class="ck"><input type="checkbox" id="ad-seg"><label for="ad-seg">Seguro da mercadoria (1,5% do serviço)</label></div></div>
+      <div class="card"><h2>Contrato</h2><div class="ck"><input type="checkbox" id="ad-ct"><label for="ad-ct">Li e aceito o contrato digital e as regras de responsabilidade por perdas e avarias</label></div></div>
+    </div>
+    <div class="card" style="flex:1;min-width:280px"><h2>Valores</h2>
+      <div class="tot"><span>Serviço do operador</span><span id="t-srv"></span></div>
+      <div class="tot"><span>Adicionais</span><span id="t-add"></span></div>
+      <div class="tot"><span>Taxa da plataforma (10%)</span><span id="t-fee"></span></div>
+      <div class="tot f"><span>Total</span><span id="t-tot"></span></div>
+      <button class="btn w" id="pay" style="margin-top:18px">Contratar e pagar</button>
+      <p style="font-size:12px;text-align:center;margin:12px 0 0">Pagamento protegido · Contrato digital · Seguro opcional</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAINEL -->
+<section class="view" id="v-painel">
+  <h1>Painel do contratante</h1>
+  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Pallets armazenados</p><p class="big" id="k-pal">0</p></div><div class="card"><p>Pedidos em andamento</p><p class="big">3</p></div><div class="card"><p>Entregas no prazo</p><p class="big">96%</p></div><div class="card"><p>Ocorrências abertas</p><p class="big" id="k-oc">1</p></div></div>
+  <div class="row" style="align-items:flex-start"><div class="card" style="flex:2;min-width:300px"><h2>Pedidos e entregas</h2>
+    <table><tr><th>Pedido</th><th>Destino</th><th>Status</th><th>Prazo</th></tr>
+    <tr><td>#1042</td><td>Batel</td><td><span class="pl a">Em separação</span></td><td>amanhã</td></tr>
+    <tr><td>#1041</td><td>Portão</td><td><span class="pl b">Em rota</span></td><td>hoje</td></tr>
+    <tr><td>#1039</td><td>Água Verde</td><td><span class="pl c">Entregue</span></td><td>ontem</td></tr></table></div>
+    <div class="card" style="flex:1;min-width:260px"><h2>Solicitar serviço</h2>
+      <button class="bt2 w" data-go="servicos" style="margin-bottom:12px">Picking e packing</button><button class="bt2 w" data-go="servicos" style="margin-bottom:12px">Expedição</button><button class="bt2 w" data-go="servicos" style="margin-bottom:12px">Transporte / rota compartilhada</button><button class="btn w" id="oc">Abrir ocorrência</button></div></div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="view" id="v-servicos">
+  <h1>Serviços adicionais e rota compartilhada</h1>
+  <div class="row" style="align-items:flex-start">
+    <div style="flex:2;min-width:300px">
+      <div class="card" style="margin-bottom:16px"><h2>Picking e packing</h2><div class="row"><div><label for="s1">Pedidos por mês</label><input id="s1" type="number" placeholder="Ex.: 800"></div><div><label for="s2">Itens (SKUs)</label><input id="s2" type="number" placeholder="Ex.: 45"></div><div><label for="s3">Embalagem</label><select id="s3"><option>Caixa padrão</option><option>Personalizada</option></select></div></div></div>
+      <div class="card"><h2>Expedição e transporte</h2><div class="row"><div><label for="e1">Origem</label><input id="e1" value="Operador A"></div><div><label for="e2">Destino / região</label><input id="e2" placeholder="Ex.: Curitiba – Zona Sul"></div><div><label for="e3">Janela de entrega</label><input id="e3" placeholder="Ex.: 8h às 12h"></div></div><button class="btn" id="cot">Solicitar cotação</button></div>
+    </div>
+    <div class="card" style="flex:1;min-width:320px"><h2>Rota compartilhada sugerida</h2><p>3 pedidos de clientes diferentes têm destinos compatíveis nesta janela.</p>
+      <div id="map"></div>
+      <div class="tot" style="margin-top:12px"><span>Economia estimada</span><b style="color:var(--navy)">R$ 180 (ilustrativo)</b></div>
+      <div class="ck"><input type="checkbox" id="rt"><label for="rt">Incluir meu pedido na rota</label></div>
+      <button class="btn w" id="rt-ok">Confirmar consolidação</button></div>
+  </div>
+</section>
+
+<!-- CADASTRO OPERADOR -->
+<section class="view" id="v-cadastro">
+  <h1>Cadastrar capacidade disponível</h1><p>Em poucos minutos seu espaço ocioso vira receita. <a href="#operador" style="color:var(--sky);font-weight:600">Ver painel do operador →</a></p>
+  <div class="row" style="align-items:flex-start">
+    <div class="card" style="flex:2;min-width:300px"><div class="row"><div><label for="c-nome">Nome da empresa</label><input id="c-nome" placeholder="Nome do operador"><label for="c-loc">Localização</label><input id="c-loc" placeholder="Endereço do galpão"><label for="c-pal">Posições-pallet</label><input id="c-pal" type="number" placeholder="Ex.: 120"></div>
+      <div><label for="c-d1">Disponível de</label><input id="c-d1" type="date"><label for="c-d2">Disponível até</label><input id="c-d2" type="date"><label for="c-pr">Preço mínimo (R$/pallet/mês)</label><input id="c-pr" type="number" placeholder="Ex.: 60"></div></div>
+      <label>Serviços oferecidos</label><div class="row"><div class="ck"><input type="checkbox" id="x1" checked><label for="x1">Armazenagem</label></div><div class="ck"><input type="checkbox" id="x2"><label for="x2">Picking e packing</label></div><div class="ck"><input type="checkbox" id="x3"><label for="x3">Expedição</label></div><div class="ck"><input type="checkbox" id="x4"><label for="x4">Transporte</label></div></div>
+      <button class="btn" id="pub">Publicar capacidade</button></div>
+    <div class="card" style="flex:1;min-width:300px"><h2>Prévia do anúncio</h2><svg viewBox="0 0 120 70" width="100%" height="130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="background:#E5E7EB;border-radius:6px;margin-bottom:12px"><use href="#wh"/></svg><h3 id="pv-n">Seu nome</h3><span class="tag" id="pv-p">0 pallets</span><span class="tag" id="pv-pr">R$ 0</span><p>Será exibido a contratantes compatíveis, com selo de homologação e avaliações.</p></div>
+  </div>
+</section>
+
+<!-- OPERADOR -->
+<section class="view" id="v-operador">
+  <h1>Painel do operador</h1>
+  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Ocupação atual</p><p class="big">72%</p></div><div class="card"><p>Pallets livres</p><p class="big">34</p></div><div class="card"><p>Receita no mês</p><p class="big">R$ 8,4 mil</p></div><div class="card"><p>Avaliação</p><p class="big">4,8</p></div></div>
+  <div class="row" style="align-items:flex-start"><div class="card" style="flex:2;min-width:300px"><h2>Ocupação por mês (ilustrativo)</h2><div class="bars" style="margin-bottom:28px"><div style="height:90px"><span>Jul</span></div><div style="height:110px"><span>Ago</span></div><div style="height:70px"><span>Set</span></div><div style="height:130px" class="h"><span>Out</span></div><div style="height:150px" class="h"><span>Nov</span></div><div style="height:120px"><span>Dez</span></div></div></div>
+    <div class="card" style="flex:1;min-width:300px"><h2>Pedidos recebidos</h2><div id="reqs"></div><h3 style="margin-top:16px">Próximo repasse</h3><p>R$ 3.120 em 05/12</p></div></div>
+</section>
+
+<!-- ADMIN -->
+<section class="view" id="v-admin">
+  <h1>Gestão interna</h1>
+  <div class="g k4" style="margin-bottom:16px"><div class="card"><p>Volume transacionado</p><p class="big">R$ 84 mil</p></div><div class="card"><p>Comissão</p><p class="big">R$ 8,4 mil</p></div><div class="card"><p>Operadores ativos</p><p class="big">12</p></div><div class="card"><p>SLA médio</p><p class="big">94%</p></div></div>
+  <div class="row" style="align-items:flex-start"><div class="card"><h2>Aguardando homologação</h2><div id="hom"></div></div>
+    <div class="card"><h2>Ocorrências abertas</h2><table><tr><th>Pedido</th><th>Tipo</th><th>Status</th></tr><tr><td>#1033</td><td>Avaria</td><td><span class="pl a">Em análise</span></td></tr><tr><td>#1036</td><td>Atraso</td><td><span class="pl b">Aberta</span></td></tr></table></div></div>
+</section>
+</main>
+<footer>FlexLog · protótipo acadêmico · Onde a capacidade encontra a oportunidade.</footer>
+<div id="toast" role="status"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wh" viewBox="0 0 120 70"><rect width="120" height="14" fill="#CBD5E1"/><rect y="58" width="120" height="12" fill="#9CA3AF"/><g fill="#374151"><rect x="14" y="14" width="2" height="44"/><rect x="44" y="14" width="2" height="44"/><rect x="74" y="14" width="2" height="44"/><rect x="104" y="14" width="2" height="44"/></g><g fill="#6B7280"><rect x="14" y="26" width="32" height="3"/><rect x="14" y="44" width="32" height="3"/><rect x="74" y="26" width="32" height="3"/><rect x="74" y="44" width="32" height="3"/></g><g fill="#F97316" stroke="#374151" stroke-width=".5"><rect x="17" y="16" width="8" height="10"/><rect x="28" y="16" width="8" height="10"/><rect x="17" y="34" width="8" height="10"/><rect x="77" y="16" width="8" height="10"/><rect x="88" y="34" width="8" height="10"/></g><g fill="#0EA5E9" stroke="#374151" stroke-width=".5"><rect x="28" y="34" width="8" height="10"/><rect x="88" y="16" width="8" height="10"/><rect x="77" y="34" width="8" height="10"/><rect x="17" y="49" width="8" height="9"/><rect x="97" y="49" width="8" height="9"/></g></symbol></svg>
+
+<script>
+/* ===== GOOGLE MAPS (opcional) =====
+   Cole sua chave da Maps JavaScript API abaixo. Sem chave, o site mostra um mapa ilustrativo.
+   Restrinja a chave ao domínio onde o site for publicado. */
+const GMAPS_KEY = "";
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const brl=n=>"R$ "+n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const S={pal:30,meses:3,op:null,sort:"score"};
+const OPS=[
+ {n:"Operador A",km:8,rate:4.8,price:62,free:120,score:95,tags:["Picking/packing","Docas"],best:1},
+ {n:"Operador B",km:14,rate:4.6,price:55,free:80,score:88,tags:["Transporte","Seguro"]},
+ {n:"Operador C",km:5,rate:4.3,price:70,free:200,score:82,tags:["Armazenagem"]}];
+const mapSVG='<svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mapa ilustrativo da rota compartilhada"><rect width="320" height="150" fill="#F1F3F4"/><g fill="#E3E6EA"><rect x="10" y="10" width="60" height="40"/><rect x="90" y="12" width="70" height="34"/><rect x="260" y="14" width="50" height="38"/><rect x="12" y="70" width="60" height="30"/><rect x="110" y="72" width="60" height="26"/><rect x="200" y="74" width="40" height="30"/><rect x="20" y="118" width="50" height="26"/><rect x="130" y="120" width="70" height="24"/><rect x="230" y="122" width="76" height="22"/></g><g fill="#CDE8D0"><rect x="190" y="8" width="50" height="44"/><rect x="262" y="76" width="48" height="28"/></g><g stroke="#fff" stroke-width="7" fill="none"><path d="M0 60H320"/><path d="M0 108H320"/><path d="M80 0V150"/><path d="M180 0V150"/><path d="M250 0V150"/></g><path d="M30 108H80V60H180V108H250V60" stroke="#F97316" stroke-width="4" fill="none" stroke-dasharray="8 5"/><rect x="22" y="100" width="16" height="16" rx="3" fill="#0B2D5B"/><text x="30" y="112" font-family="Arial" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">H</text><g font-family="Arial" font-size="10" font-weight="700" fill="#fff" text-anchor="middle"><circle cx="80" cy="60" r="9" fill="#F97316"/><text x="80" y="64">1</text><circle cx="180" cy="108" r="9" fill="#F97316"/><text x="180" y="112">2</text><circle cx="250" cy="60" r="9" fill="#F97316"/><text x="250" y="64">3</text></g><rect x="4" y="136" width="136" height="12" rx="2" fill="#fff" opacity=".9"/><text x="8" y="145" font-family="Arial" font-size="8" fill="#475569">Google Maps · integração via API</text></svg>';
+let mapReady=false;
+function drawMaps(){
+  $("#map").innerHTML=mapSVG; $("#map-res").innerHTML=mapSVG;
+  if(!GMAPS_KEY||mapReady) return; mapReady=true;
+  window.initFlex=()=>{
+    const hub={lat:-25.4800,lng:-49.3300};
+    const stops=[{lat:-25.4400,lng:-49.2500},{lat:-25.4700,lng:-49.2300},{lat:-25.4000,lng:-49.2700}];
+    const m=new google.maps.Map($("#map"),{center:{lat:-25.4284,lng:-49.2733},zoom:11,disableDefaultUI:true,zoomControl:true});
+    new google.maps.Marker({position:hub,map:m,label:"H",title:"Hub de saída"});
+    stops.forEach((p,i)=>new google.maps.Marker({position:p,map:m,label:String(i+1)}));
+    new google.maps.Polyline({path:[hub,...stops],map:m,strokeColor:"#F97316",strokeWeight:4});
+  };
+  const s=document.createElement("script");
+  s.src="https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(GMAPS_KEY)+"&callback=initFlex"; s.async=true; document.head.appendChild(s);
+}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2800)}
+function meses(){const a=new Date($("#q-ini").value),b=new Date($("#q-fim").value);const d=(b-a)/864e5;return d>0?Math.max(1,Math.ceil(d/30)):1}
+function renderOps(){
+  const o=[...OPS].sort((a,b)=>S.sort==="price"||S.sort==="km"?a[S.sort]-b[S.sort]:b[S.sort]-a[S.sort]);
+  $("#ops").innerHTML=o.map(p=>`<div class="card op"><svg viewBox="0 0 120 70" width="130" height="90" aria-hidden="true"><use href="#wh"/></svg>
+  <div class="i"><h3>${p.n}</h3>${p.best?'<span class="tag o">Melhor combinação</span>':''}${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}<span class="tag">✓ Homologado</span><span class="tag">Nota ${p.rate.toString().replace(".",",")}</span><p>${p.km} km · ${p.free} pallets disponíveis</p></div>
+  <div class="pr"><h3>${brl(p.price)}<small style="font-size:12px"> /pallet/mês</small></h3><button class="bt2" data-pick="${p.n}">Escolher</button> <button class="btn" data-prop="${p.n}">Ver proposta</button></div></div>`).join("");
+  $$("[data-prop],[data-pick]").forEach(b=>b.onclick=()=>{S.op=OPS.find(x=>x.n===(b.dataset.prop||b.dataset.pick));if(b.dataset.prop)go("proposta");else toast(S.op.n+" selecionado")});
+}
+function calc(){
+  if(!S.op) S.op=OPS[0];
+  const srv=S.op.price*S.pal*S.meses;
+  const add=($("#ad-pick").checked?450*S.meses:0)+($("#ad-trans").checked?600*S.meses:0)+($("#ad-seg").checked?srv*.015:0);
+  const fee=(srv+add)*.10;
+  $("#prop-res").textContent=`${S.op.n} · ${S.pal} pallets · ${S.meses} ${S.meses>1?"meses":"mês"} · ${$("#q-reg").value}`;
+  $("#t-srv").textContent=brl(srv);$("#t-add").textContent=brl(add);$("#t-fee").textContent=brl(fee);$("#t-tot").textContent=brl(srv+add+fee);
+}
+const REQS=["Cliente 1 · 30 pallets","Cliente 2 · 12 pallets"],HOM=["Operador D · documentos enviados · seguro ok","Operador E · documentos pendentes"];
+function list(id,arr,ok,no){$(id).innerHTML=arr.map((t,i)=>`<div class="op" style="margin-bottom:10px"><p class="i" style="margin:0">${t}</p><button class="btn" data-y="${i}">${ok}</button><button class="bt2" data-n="${i}">${no}</button></div>`).join("")||"<p>Nada pendente.</p>";
+  $$(id+" button").forEach(b=>b.onclick=()=>{arr.splice(+(b.dataset.y??b.dataset.n),1);toast({Aceitar:"Pedido aceito",Recusar:"Pedido recusado",Aprovar:"Operador aprovado",Reprovar:"Operador reprovado"}[b.textContent]);list(id,arr,ok,no)})}
+const go=v=>{location.hash=v};
+function route(){
+  const v=(location.hash||"#busca").slice(1);const id="v-"+(document.getElementById("v-"+v)?v:"busca");
+  $$(".view").forEach(e=>e.classList.toggle("on",e.id===id));
+  $$("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.v.split(",").includes(id.slice(2))));
+  if(id==="v-proposta")calc(); if(id==="v-servicos"||id==="v-resultados")drawMaps(); window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+$("#go-search").onclick=()=>{S.pal=Math.max(1,+$("#q-pal").value||1);S.meses=meses();$("#res-title").textContent=`${OPS.length} operadores compatíveis · ${S.pal} pallets · ${$("#q-ini").value.split("-").reverse().join("/")} a ${$("#q-fim").value.split("-").reverse().join("/")}`;renderOps();go("resultados")};
+$$("[data-p]").forEach(b=>b.onclick=()=>{const[p,i,f]=b.dataset.p.split("|");$("#q-pal").value=p;$("#q-ini").value=i;$("#q-fim").value=f;toast("Busca preenchida: "+b.textContent)});
+$$("#sort .chip").forEach(b=>b.onclick=()=>{$$("#sort .chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");S.sort=b.dataset.s;renderOps()});
+["ad-pick","ad-trans","ad-seg"].forEach(i=>$("#"+i).onchange=calc);
+$("#pay").onclick=()=>{if(!$("#ad-ct").checked)return toast("Aceite o contrato digital para continuar");$("#k-pal").textContent=S.pal;toast("Contratação simulada com sucesso");go("painel")};
+$$("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+$("#oc").onclick=()=>{$("#k-oc").textContent=+$("#k-oc").textContent+1;toast("Ocorrência aberta")};
+$("#cot").onclick=()=>toast("Cotação solicitada");$("#rt-ok").onclick=()=>toast($("#rt").checked?"Consolidação confirmada":"Marque para incluir seu pedido na rota");
+[["c-nome","pv-n",v=>v||"Seu nome"],["c-pal","pv-p",v=>(v||0)+" pallets"],["c-pr","pv-pr",v=>brl(+v||0)]].forEach(([a,b,f])=>$("#"+a).oninput=e=>$("#"+b).textContent=f(e.target.value));
+$("#pub").onclick=()=>toast("Capacidade publicada (simulação)");
+list("#reqs",REQS,"Aceitar","Recusar");list("#hom",HOM,"Aprovar","Reprovar");renderOps();route();
+</script>
+</body>
+</html>
